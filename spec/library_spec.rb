@@ -41,4 +41,12 @@ describe 'Library Object' do
     expect(lib.get_book('Designing for the Web')).to be_an_instance_of(Book)
   end
 
+  it 'saves the library' do
+    books = lib.books.map { |book| book.title }
+    lib.save 'our_new_library.yml'
+    lib2 = Library.new 'our_new_library.yml'
+    books2 = lib2.books.map { |book| book.title }
+    expect(books).to eql books2
+  end
+
 end

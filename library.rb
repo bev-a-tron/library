@@ -22,4 +22,11 @@ class Library
     @books.select { |book| book.title == title }.first
   end
 
+  def save lib_file = false
+    @lib_file = lib_file || @lib_file || 'library.yml'
+    File.open @lib_file, 'w' do |f|
+      f.write YAML::dump @books
+    end
+  end
+
 end
