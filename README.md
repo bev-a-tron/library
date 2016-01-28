@@ -1,4 +1,4 @@
-==Beverly's Rspec learning (of fun!)  
+##Beverly's Rspec learning (of fun!)
 
 ```
 gem install rspec
