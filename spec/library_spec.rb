@@ -32,4 +32,8 @@ describe 'Library Object' do
     end
   end
 
+  it 'returns all the books in a given category' do
+    expect(lib.get_books_in_category(:development).length).to eq(2)
+  end
+
 end
